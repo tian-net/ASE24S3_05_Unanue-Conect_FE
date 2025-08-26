@@ -1,0 +1,63 @@
+/* Contenedor principal: form a la izquierda, lista a la derecha */
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Lista de productos */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/* Tarjeta de cada producto */
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Imagen del producto */
+.product-card img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+
+/* Hover tarjeta */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Botón eliminar */
+.product-card button {
+  background-color: #DC2626;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #F87171;
+}
+
+/* Títulos de productos */
+.product-card h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  color: #1E40AF;
+}

@@ -1,0 +1,67 @@
+/* Contenedor del formulario de productos */
+.product-form {
+  display: flex; /* Usamos flexbox para organizar los elementos */
+  flex-direction: column; /* Colocamos los elementos en columna */
+  gap: 0.8rem; /* Espacio entre los elementos del formulario */
+  padding: 1.5rem; /* Espacio interno alrededor del contenido */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 12px; /* Bordes redondeados */
+  background-color: #f0f4f8; /* Fondo claro para diferenciar del fondo principal */
+  width: 300px; /* Ancho fijo del formulario */
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+  }
+
+  .product-form {
+    width: 90%; /* Ajusta el ancho del formulario a la pantalla */
+  }
+
+  .product-list {
+    justify-content: center; /* Centra la lista de productos */
+  }
+}
+
+/* Estilos de los inputs del formulario */
+.product-form input {
+  padding: 0.6rem; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde gris claro */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Animación suave al enfocar */
+}
+
+/* Estilos al enfocar los inputs */
+.product-form input:focus {
+  border-color: #2563EB; /* Borde azul */
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5); /* Sombra azul suave */
+  outline: none; /* Quita el borde por defecto del navegador */
+}
+
+/* Botón principal del formulario */
+.product-form button {
+  background-color: #1E40AF; /* Fondo azul oscuro */
+  color: white; /* Texto en blanco */
+  padding: 0.8rem; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: transform 0.2s, background-color 0.3s; /* Animación suave */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.product-form button:hover {
+  background-color: #1D4ED8; /* Cambia a un azul más claro */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Título del formulario */
+.product-form h2 {
+  margin: 0 0 0.5rem 0; /* Margen inferior pequeño */
+  text-align: center; /* Centra el título */
+  color: #1E40AF; /* Color azul del título */
+}

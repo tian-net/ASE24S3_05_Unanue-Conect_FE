@@ -1,0 +1,14 @@
+<div class="product-container">
+  <!-- Formulario a la izquierda -->
+  <app-product-form (addProduct)="addProduct($event)"></app-product-form>
+
+  <!-- Lista de productos a la derecha -->
+  <div class="product-list">
+    <div class="product-card" *ngFor="let product of products; index as i">
+      <img [src]="product.image" alt="{{product.name}}">
+      <h3>{{product.name}}</h3>
+      <p>S/ {{product.price}}</p>
+      <button (click)="removeProduct(i)">Eliminar</button>
+    </div>
+  </div>
+</div>
