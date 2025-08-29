@@ -1,13 +1,37 @@
 <div class="product-container">
-  <!-- Formulario a la izquierda -->
   <app-product-form (addProduct)="addProduct($event)"></app-product-form>
 
-  <!-- Lista de productos a la derecha -->
+
+  <div class="search-container">
+    <input 
+      type="text" 
+      [(ngModel)]="searchText" 
+      placeholder="🔍 Buscar por nombre o categoría..."
+      class="search-box"
+    >
+  </div>
+
   <div class="product-list">
-    <div class="product-card" *ngFor="let product of products; index as i">
-      <img [src]="product.image" alt="{{product.name}}">
+    <div *ngIf="(products | productFilter:searchText).length === 0">
+      <p>No hay productos disponibles.</p>
+    </div>
+
+    <div 
+      class="product-card" 
+      *ngFor="let product of products | productFilter:searchText; index as i"
+      [ngClass]="{
+        'fruta-card': product.category === 'Fruta',
+        'verdura-card': product.category === 'Verdura',
+        'bebida-card': product.category === 'Bebida',
+        'low-stock': product.quantity <= 4
+      }"
+    >
+      <img [src]="product.image" alt="{{product.name}}" class="product-image">
       <h3>{{product.name}}</h3>
-      <p>S/ {{product.price}}</p>
+      <p><b>Precio:</b> S/ {{product.price}}</p>
+      <p><b>Descripción:</b> {{product.description}}</p>
+      <p><b>Categoría:</b> {{product.category}}</p>
+      <p><b>Cantidad:</b> {{product.quantity}}</p>
       <button (click)="removeProduct(i)">Eliminar</button>
     </div>
   </div>

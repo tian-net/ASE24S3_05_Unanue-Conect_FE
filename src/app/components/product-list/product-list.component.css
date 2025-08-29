@@ -1,3 +1,13 @@
+/* Colores según categoría */
+.fruta-card { background-color: #cfbc70; }
+.verdura-card { background-color: #61bd92; }
+.bebida-card { background-color: #6da4ec; }
+
+/* Baja cantidad */
+.low-stock {
+  border: 2px solid red;
+}
+
 /* Contenedor principal: form a la izquierda, lista a la derecha */
 .product-container {
   display: flex;
@@ -18,27 +28,31 @@
 
 /* Tarjeta de cada producto */
 .product-card {
-  border: 1px solid #ccc;
   border-radius: 12px;
   padding: 1rem;
-  width: 200px;
+  width: 220px;
   text-align: center;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 /* Imagen del producto */
 .product-card img {
-  max-width: 100%;
+  width: 150px;        /* ancho fijo */
+  height: 150px;       /* alto fijo */
+  object-fit: contain; /* muestra la imagen completa sin recortar */
   border-radius: 12px;
   margin-bottom: 0.5rem;
+  background-color: white; /* opcional, para que no se vea feo si sobra espacio */
+  padding: 5px;           /* opcional, da respiro alrededor */
 }
+
 
 /* Hover tarjeta */
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
 }
 
 /* Botón eliminar */
@@ -46,18 +60,41 @@
   background-color: #DC2626;
   color: white;
   border: none;
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .product-card button:hover {
-  background-color: #F87171;
+  background-color: #B91C1C;
 }
 
 /* Títulos de productos */
 .product-card h3 {
   margin: 0.5rem 0 0.2rem 0;
-  color: #1E40AF;
+}
+
+
+/* Barra de búsqueda */
+.search-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  width: 280px;           /* 👈 Ajusta aquí el tamaño */
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 4px 10px rgba(0,123,255,0.2);
 }

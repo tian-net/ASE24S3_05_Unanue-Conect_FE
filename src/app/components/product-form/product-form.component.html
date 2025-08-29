@@ -1,25 +1,26 @@
-<!-- Formulario para agregar productos -->
-<form (ngSubmit)="onSubmit()" class="product-form">
-  <input 
-    type="text" 
-    placeholder="Nombre" 
-    [(ngModel)]="name" 
-    name="name" 
-    required>
-  
-  <input 
-    type="number" 
-    placeholder="Precio" 
-    [(ngModel)]="price" 
-    name="price" 
-    required>
-  
-  <input 
-    type="text" 
-    placeholder="URL de imagen" 
-    [(ngModel)]="image" 
-    name="image" 
-    required>
-  
+<form (ngSubmit)="onSubmit()" #productForm="ngForm" class="form-container">
+
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="newProduct.name" name="name" required>
+
+  <label>Precio:</label>
+  <input type="number" [(ngModel)]="newProduct.price" name="price" required min="0.1">
+
+  <label>Descripción:</label>
+  <input type="text" [(ngModel)]="newProduct.description" name="description" required>
+
+  <label>Categoría:</label>
+  <select [(ngModel)]="newProduct.category" name="category">
+    <option value="Fruta">Fruta</option>
+    <option value="Verdura">Verdura</option>
+    <option value="Bebida">Bebida</option>
+  </select>
+
+  <label>Cantidad:</label>
+  <input type="number" [(ngModel)]="newProduct.quantity" name="quantity" required min="1">
+
+  <label>Imagen (URL):</label>
+  <input type="text" [(ngModel)]="newProduct.image" name="image">
+
   <button type="submit">Agregar Producto</button>
 </form>
