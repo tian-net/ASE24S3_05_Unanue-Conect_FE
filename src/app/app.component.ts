@@ -1,14 +1,16 @@
+// src/app/app.component.ts
 import { Component } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
+import { RouterOutlet } from '@angular/router'; // 👈 Importa RouterOutlet
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, ProductListComponent],
+  imports: [HeaderComponent, RouterOutlet], // 👈 Reemplaza ProductListComponent por RouterOutlet
   template: `
     <app-header></app-header>
-    <app-product-list></app-product-list>
+    <div class="container">
+      <router-outlet></router-outlet> </div>
   `,
   styleUrls: ['./app.component.css']
 })

@@ -1,0 +1,15 @@
+<div class="clients-container">
+  <!-- Formulario -->
+  <app-client-form 
+    [clientToEdit]="selectedClient"
+    (saveClient)="onSaveClient($event)">
+  </app-client-form>
+
+  <!-- Listado -->
+  <app-client-list 
+    [clients]="clients"
+    (editClient)="onEditClient($event)"
+    (deleteClient)="onDeleteClient($event)"
+    (restoreClient)="onRestoreClient($event)">
+  </app-client-list>
+</div>

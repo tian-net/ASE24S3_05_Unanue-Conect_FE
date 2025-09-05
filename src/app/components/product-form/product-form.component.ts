@@ -13,7 +13,6 @@ import { Product } from '../products/product.model';
 export class ProductFormComponent {
   @Output() addProduct = new EventEmitter<Product>();
 
-  // Producto temporal para el formulario
   newProduct: Product = {
     name: '',
     price: 0,
@@ -26,7 +25,6 @@ export class ProductFormComponent {
   onSubmit() {
     if (this.newProduct.name && this.newProduct.price > 0 && this.newProduct.quantity > 0) {
       this.addProduct.emit({ ...this.newProduct });
-      alert('✅ Producto agregado con éxito');
       this.newProduct = { name: '', price: 0, description: '', category: 'Fruta', quantity: 1, image: '' };
     } else {
       alert('⚠️ Por favor, complete todos los campos correctamente');

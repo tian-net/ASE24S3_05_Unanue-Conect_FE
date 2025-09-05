@@ -1,67 +1,60 @@
-/* Contenedor del formulario de productos */
-.product-form {
-  display: flex; /* Usamos flexbox para organizar los elementos */
-  flex-direction: column; /* Colocamos los elementos en columna */
-  gap: 0.8rem; /* Espacio entre los elementos del formulario */
-  padding: 1.5rem; /* Espacio interno alrededor del contenido */
-  border: 1px solid #ccc; /* Borde gris claro */
-  border-radius: 12px; /* Bordes redondeados */
-  background-color: #f0f4f8; /* Fondo claro para diferenciar del fondo principal */
-  width: 300px; /* Ancho fijo del formulario */
+/* src/app/components/product-form/product-form.component.css */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Limita el ancho del formulario */
+  margin: auto; /* Centra el formulario */
 }
 
-/* Estilos responsivos para pantallas pequeñas */
-@media (max-width: 768px) {
-  .product-container {
-    flex-direction: column; /* Coloca los elementos en columna */
-    align-items: center; /* Centra horizontalmente */
-  }
-
-  .product-form {
-    width: 90%; /* Ajusta el ancho del formulario a la pantalla */
-  }
-
-  .product-list {
-    justify-content: center; /* Centra la lista de productos */
-  }
+.form-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-/* Estilos de los inputs del formulario */
-.product-form input {
-  padding: 0.6rem; /* Espaciado interno */
-  border-radius: 8px; /* Bordes redondeados */
-  border: 1px solid #ccc; /* Borde gris claro */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Animación suave al enfocar */
+.form-container label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
 }
 
-/* Estilos al enfocar los inputs */
-.product-form input:focus {
-  border-color: #2563EB; /* Borde azul */
-  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5); /* Sombra azul suave */
-  outline: none; /* Quita el borde por defecto del navegador */
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Asegura que el padding no cambie el ancho */
+  font-size: 1rem;
 }
 
-/* Botón principal del formulario */
-.product-form button {
-  background-color: #1E40AF; /* Fondo azul oscuro */
-  color: white; /* Texto en blanco */
-  padding: 0.8rem; /* Espaciado interno */
-  border-radius: 8px; /* Bordes redondeados */
-  font-weight: bold; /* Texto en negrita */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  transition: transform 0.2s, background-color 0.3s; /* Animación suave */
+.form-container input:focus,
+.form-container select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Efecto al pasar el mouse sobre el botón */
-.product-form button:hover {
-  background-color: #1D4ED8; /* Cambia a un azul más claro */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+.form-container button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Título del formulario */
-.product-form h2 {
-  margin: 0 0 0.5rem 0; /* Margen inferior pequeño */
-  text-align: center; /* Centra el título */
-  color: #1E40AF; /* Color azul del título */
+.form-container button:hover {
+  background-color: #0056b3;
 }

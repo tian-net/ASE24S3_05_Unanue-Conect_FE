@@ -1,4 +1,23 @@
-<app-header></app-header>
-<div class="container">
-  <app-product></app-product>
-</div>
+<!-- src/app/components/header/header.component.html -->
+
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/products" routerLinkActive="active" ariaCurrentWhenActive="page">
+          Productos
+        </a>
+      </li>
+      <li>
+        <a routerLink="/clients" routerLinkActive="active" ariaCurrentWhenActive="page">
+          Clientes
+        </a>
+      </li>
+      <li>
+        <a routerLink="/categories" routerLinkActive="active" ariaCurrentWhenActive="page">
+          Categorías
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

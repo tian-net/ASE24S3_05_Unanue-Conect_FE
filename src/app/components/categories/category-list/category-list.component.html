@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories">
+      <td>{{ category.id }}</td>
+      <td>{{ category.name }}</td>
+      <td>{{ category.description }}</td>
+      <td>
+        <button (click)="onSelect(category)">Editar</button>
+        <button (click)="onDelete(category.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

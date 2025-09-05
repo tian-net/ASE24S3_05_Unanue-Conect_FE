@@ -1,0 +1,5 @@
+<h2>Gestión de Categorías</h2>
+
+<app-category-form [categoryToEdit]="selectedCategory"></app-category-form>
+<hr />
+<app-category-list (editCategory)="onEditCategory($event)"></app-category-list>

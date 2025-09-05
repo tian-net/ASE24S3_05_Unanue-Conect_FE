@@ -1,11 +1,20 @@
-/* Estilos al pasar el mouse sobre cada tarjeta de producto */
-.product-card:hover {
-  transform: translateY(-8px) scale(1.02); 
-  /* Mueve la tarjeta ligeramente hacia arriba y la aumenta un 2% */
-  
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
-  /* Aplica una sombra más grande para dar efecto de elevación */
-  
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  /* Transición suave de 0.3s para el movimiento y la sombra */
+/* src/app/components/products/products.component.css */
+
+.product-page-container {
+  display: flex; /* Habilita Flexbox */
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  gap: 20px; /* Añade un espacio entre las dos columnas */
+  padding: 20px;
+}
+
+.form-column,
+.list-column {
+  flex: 1; /* Permite que ambas columnas crezcan y ocupen el mismo espacio */
+}
+
+/* Opcional: Estilos para pantallas pequeñas para que los elementos se apilen */
+@media (max-width: 768px) {
+  .product-page-container {
+    flex-direction: column; /* Apila los elementos verticalmente */
+  }
 }

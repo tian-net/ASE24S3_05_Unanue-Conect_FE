@@ -1,0 +1,14 @@
+/* src/app/components/clients/clients.component.css */
+
+.clients-container {
+  display: flex; /* Use flexbox to lay out children */
+  gap: 20px; /* Add space between the list and the form */
+  padding: 20px; /* Add padding around the container */
+}
+
+/* On smaller screens, stack the components vertically */
+@media (max-width: 768px) {
+  .clients-container {
+    flex-direction: column;
+  }
+}

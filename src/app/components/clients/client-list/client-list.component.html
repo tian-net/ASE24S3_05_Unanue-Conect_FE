@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td [class.deleted]="client.isDeleted">{{ client.firstName }}</td>
+      <td [class.deleted]="client.isDeleted">{{ client.lastName }}</td>
+      <td [class.deleted]="client.isDeleted">{{ client.email }}</td>
+      <td>
+        <button *ngIf="!client.isDeleted" (click)="onSelectClient(client)" class="edit">Editar</button>
+        <button *ngIf="!client.isDeleted" (click)="onDeleteClient(client.id)" class="delete">Eliminar</button>
+        <button *ngIf="client.isDeleted" (click)="onRestoreClient(client.id)" class="restore">Restaurar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
